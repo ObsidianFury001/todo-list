@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Defining Constant Colors */
+:root{
+    --red: #f14e4e;
+    --orange: #f1bb4e;
+    --green: #84f14e;
+    --teal: #4ef18f;
+    --blue: #4e9af1;
+    --purple: #9a4ef1;
+    --pink: #f14ebd;
+}
+
+@import url(https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Roboto+Condensed:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Varela+Round&display=swap);
+
+body{
+    height: auto;
+    background-image: linear-gradient(to bottom right, #00ccff 25%, #ff00ff 85%);
+    background-attachment: fixed;
+    width: 96vw;
+    color: rgb(255, 247, 0);
+    margin: 1%;
+}
+.container{
+    height: 100vh;
+    margin-bottom: 1rem;
+}
+/* For the Main Todo List CSS*/
+.card{ 
+    margin: 5%;
+    width: clamp(20%, 33vw, 60%);    
+    height: 100%;
+    border-radius: 2vw;
+    border: .25rem solid var(--red);
+    background:pink;
+    color: black;
+    padding: 2%;
+    text-align: center;    
+}
+
+/* For the Main Todo List header*/
+.card h1{ 
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 800;
+    font-size: 4vw;
+    width: clamp(20%, 60%, 80%);
+}
+
+.card-clear-button{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1%, 1vw, 200%);
+
+    color: var(--teal);
+    background: blueviolet;
+    border-radius: 2rem;
+    border: .2rem solid darkblue;
+
+    width: clamp(10%, 14vw, 100%);
+    height: 20%;
+
+    padding-top: .25rem;
+
+    margin-top: .5rem;
+    transition: .4s ease-in-out;
+    vertical-align: center;
+}
+
+#clear{
+    font-size: 1.75rem;
+    transform: translateY(-.45vh);
+}
+
+.clear-text{
+    font-size: clamp(1%, 1.5rem, 400%);
+    pointer-events: none;
+}
+.controls-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4%;
+    border-radius: .25rem;
+}
+
+/* For the Input Field*/
+.controls{
+    margin: 0rem;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: flex-start;
+    width: 85%;
+    height: 7vh;
+    border-radius: .5rem;
+    border: none;
+    background-color: #b4ffd3;
+}
+
+.todo-input{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 500;
+    font-size: clamp(70%, 1.5vw, 200%);
+    width: 85%;
+    height: auto;
+    color: black;
+    text-indent: 1rem;
+    background-color: #b4ffd3;
+    border-top-left-radius: .5rem ;
+    border-bottom-left-radius: .5rem ;
+    border-top-right-radius: none;
+    border-bottom-right-radius: none;
+    border: .2rem solid darkblue;
+}
+
+.todo-input:focus{
+    border: .2rem solid blue;
+    border-top-left-radius: .5rem ;
+    border-bottom-left-radius: .5rem ;
+    outline: none;
+}
+
+.todo-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+    color: white;
+    font-size: 1vw;
+    padding: 2%;
+    width: 3.5vw;
+    height: auto;
+    border: .2rem solid darkblue;
+    border-top-right-radius: .5rem ;
+    border-bottom-right-radius: .5rem ;
+    transition: .2s ease-in;
+}
+.todo-button:hover{
+    border-color: var(--teal);
+}
+
+.todo-list{
+    width: clamp(10%, 100%, 100%);
+    margin: 1%;
+    padding: 2%;
+    /* border: .1rem solid darkblue; */
+}
+
+.todo{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border: .2rem solid darkblue;
+    border-radius: .3rem;
+    margin: 1% 0%;
+    width: clamp(1%, 100%, 100%);
+    background-color: rgb(187, 234, 250);
+    transition: all .1s ease-in-out;
+}
+
+.todo li{
+    flex:1;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 500;
+    font-size: clamp(70%, 1.75vw, 200%);
+    list-style: none;
+    width: 100px;
+    opacity: 1;
+}
+
+/* For the Paragraph Styling*/s
+p{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 500;   
+    font-size: clamp(20%, 1vw, 105%);
+    width: clamp(20%, 100%, 105%);    
+}
+
+.trash-btn, .complete-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150%;
+    background: blueviolet;
+    width: clamp(3vw,3vw,5vw);
+    height: 6vh;
+    color: white;
+    transition: .2s ease-in;
+    /* border: none; */
+    border: .1rem solid #bbeafa;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+/* Hover Effects */
+.trash-btn:hover{
+    border: .1rem solid var(--orange);
+}
+
+.complete-btn:hover{
+    background-color: rgb(1, 163, 1);
+    border: .1rem solid var(--teal);
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: .5;
+}
+.toggled{
+    background: darkgreen;
+    border: .1rem solid var(--teal);
+}
+.slide{
+    opacity: 0;
+    transform: translateX(-10rem);
+    transition: .8s ease-in-out;
+}
+
+hr{
+    border-radius: .25rem;
+}
+.card-clear-button:hover{
+    /* border: .2rem solid #ff0357; */
+    border: .2rem solid rgb(185, 6, 6);
+    transform:  scale(1.3);
+    transform: translateY(.4rem);
+}
+.material-icons{
+    text-decoration: none;
+    pointer-events: none;
+}
+
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    li{
+        flex-grow: 1;
+        width: 100%;
+        /* border: .2rem solid var(--pink); */
+    }
+    .todo {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+    }
+    .trash-btn, .complete-btn {
+        width: 100%;
+        height: auto;
+    }
+    .controls{
+        height: 6vh;
+    }
+    .todo-button{
+        width: 20%;
+        height: auto;
+    }
+    .clear-text{
+        font-size: clamp(.5rem,1rem,1.5rem);
+    }
+    #clear{
+        display: none;
+    }
+    .card-clear-button{
+        width: clamp(10%, 10vw, 100%);
+    }
+}
+/*  Font Rules
+
+    font-family: 'Crimson Pro', serif;  
+    font-family: 'Courgette', cursive;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+*/
+
+/*  Add(Plus) Icon
+    <i class="material-icons">add_box</i>
+*/
+
+/*  Delete Icon
+    <i class="material-icons">delete_forever</i>
+*/
