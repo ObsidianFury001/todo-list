@@ -1,4 +1,4 @@
-import { API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID, APP_ID } from './config.js';
+import { API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID, APP_ID } from './config.js.js';
 
 // Selectors  
 const todoInput =  document.querySelector('.todo-input');   
